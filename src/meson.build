@@ -2,7 +2,7 @@ src = files([
   'gui_main.c',
 ])
 
-deps = [eina, efl, elm]
+deps = [eina, elm]
 
 executable('efl_example_gui', src,
   dependencies : deps,
