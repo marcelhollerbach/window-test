@@ -18,20 +18,19 @@ elm_main(int argc, char *argv[])
    win = elm_win_util_standard_add("bla", "foo");
    evas_object_show(win);
 
-   /*sc = elm_scroller_add(win);
+   sc = elm_scroller_add(win);
    evas_object_size_hint_weight_set(sc, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    evas_object_size_hint_align_set(sc, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   evas_object_show(sc);*/
+   elm_win_resize_object_add(win, sc);
+   evas_object_show(sc);
 
-
-   o = elm_button_add(win);
+   o = elm_button_add(sc);
    evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    evas_object_size_hint_align_set(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_text_set(o, "Test");
    elm_object_content_set(sc, o);
    evas_object_show(o);
 
-   elm_win_resize_object_add(win, o);
 
    evas_object_event_callback_add(win, EVAS_CALLBACK_KEY_DOWN,
                                    _etui_doc_key_down_cb, NULL);
